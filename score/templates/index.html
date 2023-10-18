@@ -15,11 +15,21 @@
        <tr>
             <th style="border: 1px solid black">Name</th>
             <th style="border: 1px solid black">Score</th>
+            <th style="border: 1px solid black;">edit</th>
+            <th style="border: 1px solid black;">delete</th>
         </tr>
         {% for student in students %}
         <tr>
             <td style="border: 1px solid black">{{ student['name'] }}</td>
             <td style="border: 1px solid black">{{ student['score'] }}</td>
+            <td>
+                <a href="/edit/{{ student['id']}}">Edit</a>
+                
+            </td>
+            <td> 
+                <a href="/delete/{{ student['id']}}"
+                onclick="return confirm('apakah anda yakin akan menghapus')">Delete</a>
+            </td>
         </tr>
         {% endfor %}
     </table>
